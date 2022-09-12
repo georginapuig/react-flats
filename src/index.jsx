@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Flat from './components/Flat'
+import FlatList from './components/FlatList'
 import SimpleMap from './components/GoogleMap'
 
 import '../assets/stylesheets/application.scss';
@@ -8,9 +8,7 @@ import '../assets/stylesheets/application.scss';
 const Hello = () => {
   return (
     <div>
-      <div className="flat-list">
-        <Flat />
-      </div>
+      <FlatList />
       
       <div className="map-container">
         <SimpleMap />
