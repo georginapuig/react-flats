@@ -8,7 +8,15 @@ export default class FlatList extends Component {
       <div className="flat-list">
         {flats.map(flat => {
           console.log(flat);
-          return <Flat price={flat.price} priceCurrency={flat.priceCurrency} name={flat.name} />
+          return (
+            <Flat
+              key={flat.lat}
+              name={flat.name}
+              imageUrl={flat.imageUrl}
+              price={flat.price} 
+              priceCurrency={flat.priceCurrency} 
+            />
+          )
         })}
       </div>
     )
