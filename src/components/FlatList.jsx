@@ -5,7 +5,8 @@ const FlatList = (props) => {
   return (
     <div className="flat-list">
       {props.flats.map((flat, index) => {
-        console.log(props.selectedFlat.name);
+        console.log(props.selectedFlat.lat);
+        
         return (
           <Flat
             key={flat.lat}
