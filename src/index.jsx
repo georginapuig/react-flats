@@ -1,23 +1,10 @@
+// external modules
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FlatList from './components/FlatList'
-import SimpleMap from './components/GoogleMap'
 
+// internal modules
 import '../assets/stylesheets/application.scss';
+import App from './components/app';
 
-const Hello = () => {
-  return (
-    <div>
-      <FlatList />
-      
-      <div className="map-container">
-        <SimpleMap />
-      </div>
-    </div>
-  );
-};
-
-const root = document.getElementById('root');
-if (root) {
-  ReactDOM.render(<Hello />, root);
-}
+// render an instance of the component in the DOM
+ReactDOM.render(<App />, document.querySelector('#root'));

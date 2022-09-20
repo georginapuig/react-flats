@@ -1,29 +1,21 @@
 import React, { Component } from 'react'
 
 export default class Flat extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { addClass: false }
-  }
-
   handleClick = () => {
-    this.setState({addClass: !this.state.addClass});
+    this.props.selectFlat(this.props.index)
   }
 
   render() {
     return (
       <div 
-        className={this.state.addClass ? "card active" : "card"}
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(${this.props.imageUrl})`
-        }}>
+        className={this.props.selected ? "card active" : "card"} style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(${this.props.flat.imageUrl})`}}>
         <div className="card-category">
-          {this.props.price}
-          <span> {this.props.priceCurrency}</span>
+          {this.props.flat.price}
+          {this.props.flat.priceCurrency}
         </div>
 
         <div className="card-description">
-          <h2>{this.props.name}</h2>
+          <h2>{this.props.flat.name}</h2>
         </div>
         
         <a className="card-link" href="#" onClick={this.handleClick}></a>
